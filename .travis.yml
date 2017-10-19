@@ -4,7 +4,7 @@ php:
   - 7.1
 
 addons:
-  CODECLIMATE_REPO_TOKEN=64932b80c87b91f0c152f704dc99ea4ad89718aec5fdb4f9576099e6d82aebb1
+  CODECLIMATE_REPO_TOKEN=64932b80c87b91f0c152f704dc99ea4ad89718aec5fdb4f9576099e6d82aebb1 ./vendor/bin/test-reporter
 
 install:
   - composer install
