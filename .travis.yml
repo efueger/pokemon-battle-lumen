@@ -1,15 +1,19 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=64932b80c87b91f0c152f704dc99ea4ad89718aec5fdb4f9576099e6d82aebb1
 language: php
 
 php:
   - 7.1
 
-addons:
-  code_climate:
-    repo_token: $code_climate_token
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 install:
-  - composer install
   - vendor/bin/security-checker security:check --end-point=http://security.sensiolabs.org/check_lock
-
-after_success:
-  - vendor/bin/test-reporter
