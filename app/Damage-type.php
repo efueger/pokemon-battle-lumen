@@ -30,3 +30,4 @@ class Damage {
         return $this->typeModifier;
     }
 }
+
