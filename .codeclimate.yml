@@ -15,7 +15,7 @@ engines:
     - c1602d46125c5d6c015c56d6bc5f6b9d
   fixme:
     enabled: true
-#    exclude_fingerprints:
+    exclude_fingerprints:
   rubocop:
     enabled: true
 #    exclude_fingerprints:
