@@ -68,19 +68,19 @@ class TypeModifierCalculator {
 
     }
     
-    public function calculateTypeModifier(Attack $playerAttack)
-    {
-        $defense = AttackType::getValue($this->againstPokemon->getType());
-        $attack = AttackType::getValue($playerAttack->getType());
-        $multiplier = $this->multipliers[$attack][$defense];
-        if ($multiplier > 0) {
-            if ($multiplier == 1)
-                return new TypeModifier(DamageType::NORMAL);
-            if ($multiplier > 1)
-                return new TypeModifier(DamageType::DOUBLE_DAMAGE);
-            if ($multiplier < 1)
-                return new TypeModifier(DamageType::HALF_DAMAGE);
-        }
-        return new TypeModifier(DamageType::NO_DAMAGE);
-    }
+//     public function calculateTypeModifier(Attack $playerAttack)
+//     {
+//         $defense = AttackType::getValue($this->againstPokemon->getType());
+//         $attack = AttackType::getValue($playerAttack->getType());
+//         $multiplier = $this->multipliers[$attack][$defense];
+//         if ($multiplier > 0) {
+//             if ($multiplier == 1)
+//                 return new TypeModifier(DamageType::NORMAL);
+//             if ($multiplier > 1)
+//                 return new TypeModifier(DamageType::DOUBLE_DAMAGE);
+//             if ($multiplier < 1)
+//                 return new TypeModifier(DamageType::HALF_DAMAGE);
+//         }
+//         return new TypeModifier(DamageType::NO_DAMAGE);
+//     }
 }
