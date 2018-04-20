@@ -21,5 +21,4 @@ install:
   - composer install
 
 
-after_success:
-  - vendor/bin/test-reporter
+
